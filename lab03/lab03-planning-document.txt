@@ -1,0 +1,13 @@
+My sprint goal is to add more features to the application. The way I have the scrum board set up, the initial functionality of the app is almost complete. It is time to start looking at customer requests. Small features are ready to be added like resizable buttons and text to speech for the text log and calculator section.
+
+This sprint is meant to focus on the core principles of the app and what it is for. Before bloating the app with oddly specific features the team must first get the app working at full capacity.
+
+I chose the customer stories that I did because the features requested were achievable at our current project maturity. Things like a customization option or a full drawing board are a little too complicated for this sprint. Instead, I am focusing on things that are within reach.
+
+I chose the construction story because dynamically sizing the buttons isn’t too complicated and it creates room for extra customization features in the future. Maybe dark/light theme could be next.
+
+I chose thinker story because refining the design is fitting to do at this stage of the project. I think github looks really good.
+
+I chose the no hands story because text to speech is a common feature in today’s digital keyboards and might be easy to add. I think it can be done using an API and is simple to set up.
+
+I chose the accountant story because being able to save the users is a core feature of the application. Making sure it is refined and is working as intended is important for this sprint. I also chose this story because the concerned citizen story seemed too complicated for this current sprint. Instead, we can let the user save
