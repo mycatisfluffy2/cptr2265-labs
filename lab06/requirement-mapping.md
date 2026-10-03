@@ -7,7 +7,7 @@
 > **The system shall retain the calculation history for the duration of the current calculating session so that previous calculations remain available for reference.**
 
 **ADR Decision:**
-I chose to avoid the **Repository Pattern** because the project does not need to permanently store records or share data with other devices.
+I chose to avoid the **Repository Pattern** because the project does not need to permanently store records or share data with other devices. Instead, I used the MVC Pattern which can handel all state and user data locally via the Model.
 
 ---
 
