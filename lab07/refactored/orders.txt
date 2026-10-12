@@ -1,0 +1,9 @@
+1001|ana@student.mctc.edu|card|99.99
+1002|kim@mctc.edu|invoice|16.99
+1003|sam@student.mctc.edu|campus_cash|52.43
+1001|ana@student.mctc.edu|card|99.99
+1002|kim@mctc.edu|invoice|16.99
+1003|sam@student.mctc.edu|campus_cash|52.43
+1001|ana@student.mctc.edu|card|99.99
+1002|kim@mctc.edu|invoice|16.99
+1003|sam@student.mctc.edu|campus_cash|52.43
