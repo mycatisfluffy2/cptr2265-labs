@@ -26,3 +26,11 @@ This repository uses GitHub Flow to manage lab assignments and collaborative cha
 ## Commit Messages
 
 Commit messages must clearly explain the change, such as `docs: document GitHub Flow policy` or `feat: add lab setup instructions`. Messages such as `fix stuff`, `changes`, or `update` should be avoided.
+
+## Pull Request Requirements
+
+- All changes targeting `main` must use a pull request.
+- At least one approving review is required for changes to `main`.
+- Pull requests should have a descriptive title and explain what changed and how it was tested.
+- Conflicts must be resolved and the resulting changes verified before merging.
+- Contributors should review classmates' work constructively and communicate clearly.
