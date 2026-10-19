@@ -1,0 +1,9 @@
+The goal of the sprint was to complete the core elements of the calcualtor app and compelte the following tasks:
+Create 2-column master grid (Left: Section 3 / Right: Sections 1 & 2 stacked)
+Connect Section 1 to Section 2 (Auto-push completed calculations to history list)
+Build Section 1 UI (Input field, number/operator buttons, result display)
+Develop Section 1 math engine (Basic financial arithmetic logic)
+Build Section 2 scrollable history UI (Stacked beneath Section 1)
+Set up overall app container (Square/rectangle fixed canvas layout)
+
+All of this was completed. 
