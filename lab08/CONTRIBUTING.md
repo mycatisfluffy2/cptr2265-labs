@@ -1,5 +1,10 @@
 # Contributing and Branching Policy
 
+# Lab 08
+
+This lab demonstrates GitHub Flow, branch protection,
+pull request reviews, and merge conflict resolution.
+
 ## Overview
 
 This repository uses GitHub Flow to manage lab assignments and collaborative changes. Changes must be developed on branches and submitted through pull requests.
