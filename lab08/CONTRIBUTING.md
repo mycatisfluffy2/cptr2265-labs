@@ -38,3 +38,7 @@ Commit messages must clearly explain the change, such as `docs: document GitHub 
 ## Merge Conflicts
 
 When conflicts occur, identify the conflicting sections, discuss or evaluate the intended changes, resolve the conflict, and test the result. Commit and push the resolution before completing the merge.
+
+## Repository Protection
+
+The `main` branch must have GitHub branch protection configured to require pull requests and at least one approving review. Force pushes and branch deletion should remain disabled.
