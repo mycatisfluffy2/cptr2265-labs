@@ -34,3 +34,7 @@ Commit messages must clearly explain the change, such as `docs: document GitHub 
 - Pull requests should have a descriptive title and explain what changed and how it was tested.
 - Conflicts must be resolved and the resulting changes verified before merging.
 - Contributors should review classmates' work constructively and communicate clearly.
+
+## Merge Conflicts
+
+When conflicts occur, identify the conflicting sections, discuss or evaluate the intended changes, resolve the conflict, and test the result. Commit and push the resolution before completing the merge.
