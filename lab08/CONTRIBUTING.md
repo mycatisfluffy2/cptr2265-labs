@@ -42,3 +42,7 @@ When conflicts occur, identify the conflicting sections, discuss or evaluate the
 ## Repository Protection
 
 The `main` branch must have GitHub branch protection configured to require pull requests and at least one approving review. Force pushes and branch deletion should remain disabled.
+
+## General Practices
+
+Keep changes focused, avoid committing credentials or other secrets, and ensure that submitted work is reproducible and properly documented.
