@@ -1,9 +1,9 @@
-# Contributing and Branching Policy
-
 # Lab 08
 
 This lab demonstrates GitHub Flow, branch protection,
 pull request reviews, and merge conflict resolution.
+
+# Contributing and Branching Policy
 
 ## Overview
 
