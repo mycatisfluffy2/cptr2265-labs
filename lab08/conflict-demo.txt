@@ -1,0 +1,2 @@
+Lab 08 merge conflict demonstration
+Resolved version: A and B were reviewed; version A retained.
