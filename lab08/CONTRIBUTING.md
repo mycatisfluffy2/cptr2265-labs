@@ -23,3 +23,6 @@ This repository uses GitHub Flow to manage lab assignments and collaborative cha
 8. Merge the pull request only after required approvals and checks are satisfied.
 9. Delete the feature branch after merging when it is no longer needed.
 
+## Commit Messages
+
+Commit messages must clearly explain the change, such as `docs: document GitHub Flow policy` or `feat: add lab setup instructions`. Messages such as `fix stuff`, `changes`, or `update` should be avoided.
