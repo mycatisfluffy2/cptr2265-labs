@@ -1,10 +1,11 @@
 package edu.mctc.gradebook;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.List;
+import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 class GradingTest {
@@ -110,4 +111,85 @@ class GradingTest {
     void letterGrade_hugeNumber_throwsIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> Grading.letterGrade(999.9));
     }
+
+    @Test
+    void gradePoints_validLetter_returnsPoints() {
+        assertEquals(4.0, Grading.gradePoints("A"));
+        assertEquals(0.0, Grading.gradePoints("F"));
+    }
+
+    @Test
+    void gradePoints_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> Grading.gradePoints(null));
+    }
+
+    @Test
+    void gradePoints_invalidLetter_throwsException() {
+        assertThrows(IllegalArgumentException.class, () -> Grading.gradePoints("Z"));
+    }
+
+    // --- Grading.dropLowest Tests ---
+    @Test
+    void dropLowest_validScores_dropsLowest() {
+        List<Double> scores = List.of(80.0, 90.0, 70.0);
+        List<Double> result = Grading.dropLowest(scores, 1);
+        assertEquals(List.of(80.0, 90.0), result);
+    }
+
+    @Test
+    void dropLowest_negativeN_throwsException() {
+        assertThrows(IllegalArgumentException.class, () -> Grading.dropLowest(List.of(80.0), -1));
+    }
+
+    @Test
+    void dropLowest_dropAll_throwsException() {
+        assertThrows(IllegalArgumentException.class, () -> Grading.dropLowest(List.of(80.0), 1));
+    }
+
+    //Extra Grading
+    @Test
+    void weightedAverage_valid_returnsAverage() {
+        Map<String, List<Double>> scores = Map.of("labs", List.of(90.0, 80.0));
+        Map<String, Double> weights = Map.of("labs", 1.0);
+        assertEquals(85.0, Grading.weightedAverage(scores, weights));
+    }
+
+    @Test
+    void weightedAverage_invalidWeightsSum_throwsException() {
+        Map<String, List<Double>> scores = Map.of("labs", List.of(90.0));
+        Map<String, Double> weights = Map.of("labs", 0.5);
+        assertThrows(IllegalArgumentException.class, () -> Grading.weightedAverage(scores, weights));
+    }
+
+    // ROSTER
+    @Test
+    void rosterLoader_validFile_loadsSuccessfully() throws Exception {
+        RosterLoader loader = new RosterLoader();
+        var records = loader.load(java.nio.file.Path.of("data", "sample_roster.csv"));
+        assertFalse(records.isEmpty());
+    }
+
+    @Test
+    void rosterLoader_emptyFile_throwsException() throws Exception {
+        RosterLoader loader = new RosterLoader();
+        java.nio.file.Path tempFile = java.nio.file.Files.createTempFile("empty", ".csv");
+        assertThrows(IllegalArgumentException.class, () -> loader.load(tempFile));
+    }
+
+    @Test
+    void rosterLoader_missingColumn_throwsException() throws Exception {
+        RosterLoader loader = new RosterLoader();
+        java.nio.file.Path tempFile = java.nio.file.Files.createTempFile("bad", ".csv");
+        java.nio.file.Files.writeString(tempFile, "student_id,name\n1,Alice");
+        assertThrows(IllegalArgumentException.class, () -> loader.load(tempFile));
+    }
+
+    @Test
+    void rosterLoader_invalidScore_throwsException() throws Exception {
+        RosterLoader loader = new RosterLoader();
+        java.nio.file.Path tempFile = java.nio.file.Files.createTempFile("badscore", ".csv");
+        java.nio.file.Files.writeString(tempFile, "student_id,name,category,score\n1,Alice,exam,abc");
+        assertThrows(IllegalArgumentException.class, () -> loader.load(tempFile));
+    }
 }
+    // STUDENT REPOSITORY
