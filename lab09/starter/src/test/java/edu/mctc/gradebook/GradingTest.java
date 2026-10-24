@@ -2,12 +2,18 @@ package edu.mctc.gradebook;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 class GradingTest {
 // TDD: median test
 
-
+    @Test
+    void median_normalScores_returnsMiddleValue() {
+        assertEquals(85.0, Grading.median(List.of(80.0, 90.0, 85.0)));
+    }
 
     // extra
     @Test
