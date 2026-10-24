@@ -12,16 +12,19 @@ import java.util.TreeSet;
 /**
  * Pure grading rules: no files, no database, no network.
  *
- * These methods are the easiest place to start writing unit tests. Each one
- * has normal cases, boundary values and error conditions worth testing.
+ * These methods are the easiest place to start writing unit tests. Each one has
+ * normal cases, boundary values and error conditions worth testing.
  */
 public final class Grading {
 
-    /** Minimum percentage for each letter, from highest to lowest. */
+    /**
+     * Minimum percentage for each letter, from highest to lowest.
+     */
     private static final double[] MINIMUMS = {93, 90, 87, 83, 80, 77, 73, 70, 67, 60, 0};
     private static final String[] LETTERS = {"A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"};
 
     private static final Map<String, Double> GRADE_POINTS = new LinkedHashMap<>();
+
     static {
         GRADE_POINTS.put("A", 4.0);
         GRADE_POINTS.put("A-", 3.67);
@@ -64,7 +67,7 @@ public final class Grading {
      * Return the 4.0-scale grade points for a letter grade (case-insensitive,
      * surrounding spaces ignored).
      *
-     * @throws NullPointerException     if letter is null
+     * @throws NullPointerException if letter is null
      * @throws IllegalArgumentException if the letter is not recognized
      */
     public static double gradePoints(String letter) {
@@ -84,7 +87,7 @@ public final class Grading {
      * not modified and the order of the remaining scores is kept.
      *
      * @throws IllegalArgumentException if n is negative, would remove every
-     *                                  score, or any score is out of range
+     * score, or any score is out of range
      */
     public static List<Double> dropLowest(List<Double> scores, int n) {
         if (n < 0) {
@@ -109,18 +112,38 @@ public final class Grading {
     }
 
     /**
+     * Return the median of a list of scores. The original list is not modified.
+     *
+     * @throws IllegalArgumentException if the list is empty or any score is out
+     * of range
+     */
+    public static double median(List<Double> scores) {
+        if (scores == null || scores.isEmpty()) {
+            throw new IllegalArgumentException("scores must not be empty");
+        }
+        List<Double> sorted = new ArrayList<>(scores);
+        Collections.sort(sorted);
+        int mid = sorted.size() / 2;
+        if (sorted.size() % 2 == 0) {
+            return (sorted.get(mid - 1) + sorted.get(mid)) / 2.0;
+        }
+        return sorted.get(mid);
+    }
+
+    /**
      * Compute a weighted course percentage, rounded to 2 decimals.
      *
      * <ul>
-     *   <li>weights must be non-negative and add up to 1.0</li>
-     *   <li>every weighted category must have at least one score</li>
-     *   <li>categories in scores that have no weight are an error</li>
+     * <li>weights must be non-negative and add up to 1.0</li>
+     * <li>every weighted category must have at least one score</li>
+     * <li>categories in scores that have no weight are an error</li>
      * </ul>
      *
-     * Example: scores {"labs": [90, 85], "exams": [78]}, weights {"labs": 0.6, "exams": 0.4}
+     * Example: scores {"labs": [90, 85], "exams": [78]}, weights {"labs": 0.6,
+     * "exams": 0.4}
      */
     public static double weightedAverage(Map<String, List<Double>> scoresByCategory,
-                                         Map<String, Double> weights) {
+            Map<String, Double> weights) {
         if (weights == null || weights.isEmpty()) {
             throw new IllegalArgumentException("weights must not be empty");
         }
