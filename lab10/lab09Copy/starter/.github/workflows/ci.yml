@@ -2,9 +2,9 @@ name: Gradebook CI
 
 on:
   push:
-    branches: [main, submit-lab09]
+    branches: [main, develop]
   pull_request:
-    branches: [main, submit-lab09]
+    branches: [main, develop]
 
 permissions:
   contents: read
