@@ -1,3 +1,5 @@
+![Gradebook CI](https://github.com/mycatisfluffy2/cptr2265-labs/actions/workflows/ci.yml/badge.svg)
+
 # HOW TO RUN
 
 In the midterm folder,
