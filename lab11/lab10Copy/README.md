@@ -1,0 +1,1 @@
+![Gradebook CI](https://github.com/mycatisfluffy2/cptr2265-labs/actions/workflows/ci.yml/badge.svg)
