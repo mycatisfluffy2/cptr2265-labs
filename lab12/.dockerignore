@@ -1,0 +1,37 @@
+# Git / VCS
+.git
+.gitignore
+.github
+**/.git
+
+# Build output & artifacts (image builds from source)
+target
+build
+out
+*.jar
+*.class
+
+# Secrets & local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE
+.idea
+.vscode
+*.iml
+.settings
+.classpath
+.project
+
+# Docs, media, OS noise
+*.md
+!README.md
+screenshots/
+*.png
+*.jpg
+*.mp4
+.DS_Store
+Thumbs.db
