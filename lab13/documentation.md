@@ -10,6 +10,7 @@ Pull Request Merged: Automatically changes the status of associated project item
 I verified that both workflows were enabled and configured correctly. These automations help reduce manual updates and keep the project board organized as work progresses.
 
 **Part B: Poker Session**
+
 For part B, I chose to estimate the following stories where my initial estimates did not fully account for the work involved:
 =========================================================
     CH-04: Create main Java Swing window, Inital score: 3, Updated score: 2
@@ -22,6 +23,7 @@ For part B, I chose to estimate the following stories where my initial estimates
 =========================================================
 
 **Why the estimates changed:**
+
     CH-04 – Main Java Swing Window
     This isn't a crash course on Java, I can use AI to help make the swing window. Using AI to help make the swing window could save a lot of time. 
 
