@@ -12,7 +12,7 @@ I verified that both workflows were enabled and configured correctly. These auto
 **Part B: Poker Session**
 
 For part B, I chose to estimate the following stories where my initial estimates did not fully account for the work involved:
-=========================================================
+
     CH-04: Create main Java Swing window, Inital score: 3, Updated score: 2
 
     CH-12: Add international time zones, Inital score: 3, Updated score: 5
@@ -20,7 +20,6 @@ For part B, I chose to estimate the following stories where my initial estimates
     CH-13: Add conversion history, Inital score: 3, Updated score: 5
 
     CH-16: Test usability and fix bugs, Inital score: 3, Updated score: 5
-=========================================================
 
 **Why the estimates changed:**
 
